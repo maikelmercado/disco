@@ -96,4 +96,39 @@ body {
         background-position: center center; /* Centrado perfecto horizontal y vertical */
         background-size: cover; 
     }
+    .hero-logo {
+    width: 280px; 
+    height: 280px;
+    border-radius: 50%; 
+    object-fit: cover;
+    /* --- Estilos de Animación (NUEVOS) --- */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); /* Sombra inicial suave */
+    transition: box-shadow 0.3s ease-in-out; /* Transición para un cambio de sombra más fluido */
+    animation: pulseGlow 4s infinite alternate; /* Aplica la animación */
+    /* ------------------------------------- */
+}
+
+    /*efecto de pulso y brillo */
+    @keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+    50% {
+        /* El brillo*/
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.8), 0 0 50px rgba(255, 255, 255, 0.4); 
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+    }
+
+    /* Media Query (Ajustar para móvil) */
+    @media (max-width: 768px) {
+        .hero-logo {
+            width: 180px; 
+            height: 180px;
+            /* reducir la intensidad del brillo movil */
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+    }
 </style>
