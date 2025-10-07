@@ -1,106 +1,125 @@
 <section id="gallery" class="gallery-section">
-  <h3 class="section-title">Galería y Videos</h3>
+  <h3 class="section-title">Fiestas</h3>
   
   <div class="gallery-container">
-    
-
-    
-    <div class="gallery-item">
-        <img src="/images/1.jpg" alt="Discoteca" class="gallery-image" />
+    <div class="carousel-track">
+        <div class="gallery-item"><img src="public/img/MACANUDO Sábado 24-02 SANTO DOMINGO 2024 (1).jpg" alt="Discoteca" class="gallery-image" /></div>
+        <div class="gallery-item"><img src="public/img/MACANUDO Sábado 24-02 SANTO DOMINGO 2024 (2).jpg" alt="Discoteca" class="gallery-image"/></div>
+        <div class="gallery-item"><img src="public/img/MACANUDO Sábado 24-02 SANTO DOMINGO 2024 (3).jpg" alt="Discoteca" class="gallery-image" /></div>
+        <div class="gallery-item"><img src="public/img/MACANUDO Sábado 24-02 SANTO DOMINGO 2024.jpg" alt="Discoteca" class="gallery-image" /></div>
+        
+        <div class="gallery-item"><img src="public/img/MACANUDO Sábado 24-02 SANTO DOMINGO 2024 (1).jpg" alt="Discoteca" class="gallery-image" /></div>
+        <div class="gallery-item"><img src="public/img/MACANUDO Sábado 24-02 SANTO DOMINGO 2024 (2).jpg" alt="Discoteca" class="gallery-image"/></div>
+        <div class="gallery-item"><img src="public/img/MACANUDO Sábado 24-02 SANTO DOMINGO 2024 (3).jpg" alt="Discoteca" class="gallery-image" /></div>
+        <div class="gallery-item"><img src="public/img/MACANUDO Sábado 24-02 SANTO DOMINGO 2024.jpg" alt="Discoteca" class="gallery-image" /></div>
     </div>
-    <div class="gallery-item">
-        <img src="/images/2.jpg" alt="Interior" class="gallery-image" />
-    </div>
-    <div class="gallery-item">
-        <img src="/images/3.jpg" alt="Evento en vivo" class="gallery-image" />
-    </div>
-    <div class="gallery-item">
-        <img src="/images/4.jpg" alt="Detalle de luces" class="gallery-image" />
-    </div>
-    
   </div>
 </section>
-
 <style>
+/* --- ESTILOS DEL CONTENEDOR PRINCIPAL Y TÍTULO --- */
+
 .gallery-section {
   padding: 80px 20px;
-  background: #000;
+  background: #000; /* Fondo negro */
   text-align: center;
 }
 
 .gallery-section .section-title {
-  font-size: 2.5em;
-  margin-bottom: 40px;
-  color: #bebebb;
+  font-size: 3em; /* Título más grande */
+  margin-bottom: 50px;
+  color: #fff; /* Título blanco moderno */
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
 }
+
+/* --- CONTENEDOR DE LA GALERÍA --- */
 
 .gallery-container {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  /* El nuevo ancho máximo para 4 fotos (380*4 + 20*4) es 1600px */
+  max-width: 1600px; 
+  margin: 0 auto; 
+  overflow: hidden; 
 }
 
+/* --- ÍTEM DE LA GALERÍA (La Foto) --- */
 
 .gallery-item {
-  width: 320px; 
-  height: 220px; 
+  /* FOTOS MÁS GRANDES */
+  width: 380px; 
+  height: 280px; 
+  flex-shrink: 0; 
   overflow: hidden; 
-  border-radius: 10px;
+  
+  /* Borde más curvo y moderno */
+  border-radius: 25px; 
+  
+  /* Borde sutil */
+  border: 3px solid rgba(255, 255, 255, 0.1); 
+  
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   cursor: pointer;
   position: relative;
 }
 
-/* Efecto Hover Elegante */
 .gallery-item:hover {
-  transform: scale(1.05); /* Se agranda ligeramente */
-  box-shadow: 0 10px 30px rgba(148, 176, 245, 0.4); /* Sombra */
+  transform: scale(1.05); 
+  /* Sombra más intensa y brillante al pasar el ratón */
+  box-shadow: 0 15px 45px rgba(135, 206, 250, 0.6); 
 }
 
-/* ESTILOS DE LAS IMÁGENES               */
+/* --- IMAGEN DENTRO DEL ÍTEM --- */
 
 .gallery-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; 
   transition: opacity 0.4s;
 }
 
+/* --- PISTA DE CARRUSEL (La que se mueve) --- */
 
-/* ESTILOS DEL VIDEO DE INSTAGRAM        */
-
-.video-item {
+.carousel-track {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #1a1a1a; /* Fondo oscuro para el video */
+  gap: 20px; 
+  /* Velocidad un poco más rápida para el tamaño más grande */
+  animation: scroll-slide 25s linear infinite; 
 }
 
-.instagram-video {
-  width: 100%;
-  height: 100%; /* El iframe toma el 100% del contenedor gallery-item */
-  display: block;
+.gallery-container:hover .carousel-track {
+    animation-play-state: paused; 
 }
 
-.video-caption {
-    position: absolute;
-    bottom: 5px;
-    color: #ccc;
-    font-size: 0.9em;
-    padding: 5px 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.6);
+
+/* --- DEFINICIÓN DE LA ANIMACIÓN (Desktop) --- */
+@keyframes scroll-slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Nuevo desplazamiento: 4x 380px + 4x 20px = 1520px + 80px = 1600px */
+    transform: translateX(-1600px); 
+  }
 }
 
-/* Media Query para Responsiveness */
+/* --- MEDIA QUERY (Móviles) --- */
 @media (max-width: 768px) {
   .gallery-item {
-    width: 90%; /* Hace que las imágenes y el video ocupen casi todo el ancho en móvil */
-    height: 250px;
+    width: 90vw; 
+    height: 60vw; /* Usamos 'vw' también para la altura para mejor responsividad */
+    border-radius: 15px; /* Bordes un poco menos pronunciados en móvil */
+  }
+  
+  @keyframes scroll-slide {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        /* Desplazamiento en móvil: 4x 90vw + 4x 20px = 360vw + 80px */
+        transform: translateX(calc(-360vw - 80px)); 
+      }
   }
 }
 </style>

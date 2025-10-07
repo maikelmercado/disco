@@ -57,20 +57,28 @@
 
 .double-logo {
     display: block; 
-    max-width: 350px; 
-    height: auto;
-    max-height: 180px; 
-    object-fit: contain;
-    margin: 0 auto 40px auto; 
     
-    /* Efecto elegante: Sombra que lo hace destacar */
+    /* 1. Definir Ancho y Alto Iguales para un Círculo Perfecto */
+    width: 180px; 
+    height: 180px;
+    
+    /* 2. Propiedad para hacerlo Redondo */
+    border-radius: 50%;
+    
+    /* 3. ¡CORRECCIÓN CLAVE! Recorta el contenido sobrante */
+    overflow: hidden; 
+    
+    /* Asegura que la imagen llene el círculo (si es un <img>) */
+    object-fit: cover; 
+    
+    margin: 0 auto 40px auto;
+    
+    /* Efectos que ya tenías */
     filter: drop-shadow(0 0 15px rgba(207, 206, 201, 0.7)); 
-    
-    /* Pequeño efecto hover sutil */
     transition: transform 0.4s ease;
 }
 
 .double-logo:hover {
-    transform: scale(1.05); /* Se agranda un poco al pasar el ratón */
+    transform: scale(1.05); 
 }
 </style>
