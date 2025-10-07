@@ -1,0 +1,99 @@
+<section id="hero" class="hero-section">
+  <div class="hero-content">
+    <img src="public/img/logo double.jpg" alt="Logo Double Disco" class="hero-logo">
+    <h2 class="hero-title">DOUBLE - Vive la experiencia nocturna</h2>
+  </div>
+</section>
+<style>
+
+/* ESTILOS HERO SECTION                  */
+
+
+.hero-section {
+  height: 100vh;
+  padding-top: 80px; 
+  background: url('/images/club.jpg') no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+/* Contenedor del Título y Logo */
+/* Estilos para el Logo dentro del Hero */
+.hero-logo {
+    width: 280px; 
+    height: 280px;
+    border-radius: 50%; 
+    object-fit: cover;
+   
+}
+.hero-title {
+  margin: 0; 
+  
+  font-family: 'Cormorant Garamond', serif; 
+  font-size: 1.4em; 
+  font-weight: 400; 
+  letter-spacing: 2px; 
+  text-transform: none; 
+  color: #ffffff; 
+  line-height: 1.2; 
+}
+
+/* Media Query para móvil: Reducir tamaño de fuente y logo */
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 40px 30px;
+        gap: 20px; 
+    }
+    .hero-logo {
+        width: 180px; /* Logo más pequeño en móvil */
+        height: 180px;
+    }
+    .hero-title {
+        font-size: 1.1em; /* Título/eslogan más pequeño en móvil */
+        letter-spacing: 1.5px;
+    }
+}
+/* ... otros estilos ... */
+
+/* ESTILOS DEL CUERPO (BODY)             */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    
+    /* Fondo oscuro base para cuando la imagen no cargue */
+    background-color: #000; 
+
+    /* 1. Imagen de Fondo */
+    background-image: url('public/img/header 1.jpg'); 
+    
+    /* 2. Propiedades de la Imagen */
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-position: center top; 
+    
+    /* 3. Asegura que cubra toda la pantalla */
+    background-size: cover; 
+    
+   
+}
+<style>
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+        margin: 0;
+        padding: 0;
+        
+        background-color: #000; 
+        background-image: url('/img/disco-background.jpg'); 
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+        background-position: center center; /* Centrado perfecto horizontal y vertical */
+        background-size: cover; 
+    }
+</style>

@@ -1,0 +1,76 @@
+<section id="events" class="events-section">
+  <h3 class="section-title">Próximos Eventos</h3>
+  
+  <div class="cta-container">
+    <a href="URL_DE_LA_TICKETERA_PRINCIPAL" target="_blank" class="ticket-button generic-button">
+      Comprar Entradas Ahora
+    </a>
+  </div>
+
+  <img src="public/img/logo double.jpg" alt="Logo de Double" class="double-logo" />
+    
+</section>
+<style>
+.events-section {
+  padding: 80px 20px;
+  background: #111;
+  text-align: center; /* Centra el título, botón y logo */
+}
+
+.section-title {
+  font-size: 2.5em;
+  margin-bottom: 40px; 
+  color: #bebebb;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.cta-container {
+    margin-top: 0;
+    margin-bottom: 60px; 
+}
+
+.ticket-button {
+  display: inline-block;
+  padding: 15px 40px;
+  background-color: #bebebb;
+  color: #111;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid #ffd700;
+}
+
+/* Efecto Hover */
+.ticket-button:hover {
+  background-color: transparent;
+  color: #ffd700;
+  border: 2px solid #ffd700;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+  transform: scale(1.05);
+}
+
+
+.double-logo {
+    display: block; 
+    max-width: 350px; 
+    height: auto;
+    max-height: 180px; 
+    object-fit: contain;
+    margin: 0 auto 40px auto; 
+    
+    /* Efecto elegante: Sombra que lo hace destacar */
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.7)); 
+    
+    /* Pequeño efecto hover sutil */
+    transition: transform 0.4s ease;
+}
+
+.double-logo:hover {
+    transform: scale(1.05); /* Se agranda un poco al pasar el ratón */
+}
+</style>
