@@ -1,5 +1,5 @@
 <section id="gallery" class="gallery-section">
-  <h3 class="section-title">Fiestas</h3>
+  <h3 class="section-title">Galeria</h3>
   
   <div class="gallery-container">
     <div class="carousel-track">
@@ -20,18 +20,18 @@
 <style>
   /* --- SECCIÓN DE LA GALERÍA --- */
   .gallery-section {
-    padding: 80px 20px;
+    padding: 80px 10px;
     background: #000; /* Fondo negro */
     text-align: center;
   }
 
   .gallery-section .section-title {
-    font-size: 3em; 
-    margin-bottom: 50px;
-    color: #aaa4a4; 
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+      font-size: 2.0em;
+      margin-bottom: 40px; 
+      color: #bebebb;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
   }
 
   /* --- CONTENEDOR DE LA GALERÍA --- */
@@ -44,8 +44,7 @@
   }
 
   .gallery-item {
-    
-    width: 380px; 
+    width: 580px; 
     height: 280px; 
     flex-shrink: 0; 
     overflow: hidden; 
@@ -59,7 +58,7 @@
   .gallery-item:hover {
     transform: scale(1.05); 
     /* Sombra más intensa y brillante  */
-    box-shadow: 0 15px 45px rgba(135, 206, 250, 0.6); 
+    box-shadow: 0 15px 45px rgba(244, 132, 132, 0.6); 
   }
 
   /* --- IMAGEN DENTRO DEL ÍTEM --- */
@@ -73,7 +72,7 @@
   /* ---  CARRUSEL --- */
   .carousel-track {
     display: flex;
-    gap: 20px; 
+    gap: 30px; 
     animation: scroll-slide 25s linear infinite; 
   }
 
@@ -88,7 +87,7 @@
       transform: translateX(0);
     }
     100% {
-      /* Nuevo desplazamiento: 4x 380px + 4x 20px = 1520px + 80px = 1600px */
+      /* desplazamiento: 4x 380px + 4x 20px = 1520px + 80px = 1600px */
       transform: translateX(-1600px); 
     }
   }
