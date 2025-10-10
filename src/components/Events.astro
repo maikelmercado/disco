@@ -3,82 +3,82 @@
   
   <div class="cta-container">
     <a href="URL_DE_LA_TICKETERA_PRINCIPAL" target="_blank" class="ticket-button generic-button">
-      Comprar Entradas Ahora
+      Comprar Ticket
     </a>
   </div>
 
-  <img src="public/img/sticker.png" alt="sticker" class="double-logo" />
-    
 </section>
-
 <style>
-  .events-section {
-    padding: 80px 20px;
-    background: #111;
-    text-align: center; /* Centra el título, botón y logo */
-  }
+    .events-section {
+      padding: 80px 20px; /* Padding de vuelta a un valor razonable */
+      /* --- Altura Mínima Relativa --- */
+      min-height: 50vh; 
+      background: #111; 
+      text-align: center;
+      position: relative; 
+      overflow: hidden;
 
-  .section-title {
-    font-size: 2.5em;
-    margin-bottom: 40px; 
-    color: #bebebb;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
+      /* imagen de fondo */
+      background-image: url('public/img/fiesta.jpg'); 
+      background-size: cover; 
+      background-position: center; 
+      background-attachment: fixed; 
+    }
 
-  .cta-container {
-      margin-top: 0;
-      margin-bottom: 60px; 
-  }
-
-  .ticket-button {
-    display: inline-block;
-    padding: 15px 40px;
-    background-color: #bebebb;
-    color: #111;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1em;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: 2px solid #cdccc7;
-  }
-
-  /* Efecto Hover */
-  .ticket-button:hover {
-    background-color: transparent;
-    color: #d0cfcc;
-    border: 2px solid #e5e5e4;
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
-    transform: scale(1.0o);
-  }
-
-
-.double-logo {
-    display: block; 
     
-    /* 1. Definir Ancho y Alto Iguales para un Círculo Perfecto */
-    width: 220px; 
-    height: 200px;
-    
-  
-    
-    /* 3. ¡CORRECCIÓN CLAVE! Recorta el contenido sobrante */
-    overflow: hidden; 
-    
-    /* Asegura que la imagen llene el círculo (si es un <img>) */
-  
-    
-    margin: 0 auto 40px auto;
-    
-    /* Efectos que ya tenías */
-    filter: drop-shadow(0 0 15px rgba(207, 206, 201, 0.7)); 
-    transition: transform 0.4s ease;
-}
+    .events-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7); 
+      z-index: 1; 
+    }
 
-.double-logo:hover {
-    transform: scale(1.05); 
-}
+    /* contenido  por encima del overlay */
+    .events-section .section-title,
+    .events-section .cta-container {
+      position: relative;
+      z-index: 2; 
+    }
+
+    .section-title {
+      font-size: 2.5em;
+      margin-bottom: 40px; 
+      color: #bebebb;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    }
+
+    .cta-container {
+        margin-top: 0;
+        margin-bottom: 60px; 
+    }
+
+    .ticket-button {
+      display: inline-block;
+      padding: 15px 40px;
+      background-color: #bebebb;
+      color: #111;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 2px solid #cdccc7;
+    }
+
+    /* Efecto Hover */
+    .ticket-button:hover {
+      background-color: transparent;
+      color: #d0cfcc;
+      border: 2px solid #e5e5e4;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); /* Manteniendo el glow dorado */
+      transform: scale(1.05); 
+    }
 </style>

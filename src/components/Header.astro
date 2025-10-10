@@ -97,9 +97,7 @@ body {
 }
 
 
-/* LOGO             */
-
-
+/* LOGO */
 .logo-container {
     display: flex;
     align-items: center;
@@ -113,8 +111,7 @@ body {
 }
 
 
-/* MENÚ DE NAVEGACIÓN (Desktop)         */
-
+/* MENÚ DE NAVEGACIÓN (Desktop)*/
 .nav-menu {
 
   display: flex; 
@@ -176,62 +173,62 @@ body {
 }
 
 /* MENÚ MÓVIL                             */
-.mobile-menu {
-    position: fixed;
-    top: 105px; 
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.95); 
-    z-index: 998;
-    max-height: 50vh;
-    overflow: auto;
-    opacity: 1;
-    transition: all 0.3s ease-in-out;
-}
+  .mobile-menu {
+      position: fixed;
+      top: 105px; 
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.95); 
+      z-index: 998;
+      max-height: 50vh;
+      overflow: auto;
+      opacity: 1;
+      transition: all 0.3s ease-in-out;
+  }
 
-.mobile-menu.hidden {
-    max-height: 0;
-    padding: 0;
-    overflow: hidden;
-    opacity: 0;
-}
+  .mobile-menu.hidden {
+      max-height: 0;
+      padding: 0;
+      overflow: hidden;
+      opacity: 0;
+  }
 
-.mobile-link {
-    display: block;
-    text-align: center;
-    padding: 15px 0;
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    transition: background 0.3s;
-}
+  .mobile-link {
+      display: block;
+      text-align: center;
+      padding: 15px 0;
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      transition: background 0.3s;
+  }
 
-.mobile-link:hover {
-    background: #1a1a1a;
-    color: #ffcc00;
-}
+  .mobile-link:hover {
+      background: #1a1a1a;
+      color: #ffcc00;
+  }
 
 
-/* MEDIA QUERIES (Responsividad)        */
+  /* MEDIA QUERIES (Responsividad)        */
 
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
+    
+    .header {
+      padding: 15px 25px;
+      height: 80px; 
+    }
+
+    /*CORRECCIÓN DOBLE: Aseguramos que el menú de escritorio se oculte */
+    .nav-menu {
+      display: none !important; 
+    }
+
+    /* MOSTRAR HAMBURGUESA */
+    .hamburger {
+      display: flex; 
+    }
   
-  .header {
-    padding: 15px 25px;
-    height: 80px; 
-  }
 
-  /*CORRECCIÓN DOBLE: Aseguramos que el menú de escritorio se oculte */
-  .nav-menu {
-    display: none !important; 
-  }
-
-  /* MOSTRAR HAMBURGUESA */
-  .hamburger {
-    display: flex; 
-  }
-  
-  /* Ajustar el inicio del menú móvil en móvil */
   

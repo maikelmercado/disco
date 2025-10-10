@@ -15,110 +15,100 @@
     </div>
   </div>
 </section>
+
+ 
 <style>
-/* --- ESTILOS DEL CONTENEDOR PRINCIPAL Y TÍTULO --- */
-
-.gallery-section {
-  padding: 80px 20px;
-  background: #000; /* Fondo negro */
-  text-align: center;
-}
-
-.gallery-section .section-title {
-  font-size: 3em; /* Título más grande */
-  margin-bottom: 50px;
-  color: #aaa4a4; /* Título blanco moderno */
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-}
-
-/* --- CONTENEDOR DE LA GALERÍA --- */
-
-.gallery-container {
-  display: flex;
-  justify-content: center;
-  max-width: 1600px; 
-  margin: 0 auto; 
-  overflow: hidden; 
-}
-
-/* --- ÍTEM DE LA GALERÍA  --- */
-
-.gallery-item {
-  
-  width: 380px; 
-  height: 280px; 
-  flex-shrink: 0; 
-  overflow: hidden; 
-  
-  /* Borde más curvo y moderno */
-  border-radius: 25px; 
-  
-  /* Borde sutil */
-  border: 3px solid rgba(255, 255, 255, 0.1); 
-  
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  cursor: pointer;
-  position: relative;
-}
-
-.gallery-item:hover {
-  transform: scale(1.05); 
-  /* Sombra más intensa y brillante  */
-  box-shadow: 0 15px 45px rgba(135, 206, 250, 0.6); 
-}
-
-/* --- IMAGEN DENTRO DEL ÍTEM --- */
-
-.gallery-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; 
-  transition: opacity 0.4s;
-}
-
-/* --- PISTA DE CARRUSEL (La que se mueve) --- */
-
-.carousel-track {
-  display: flex;
-  gap: 20px; 
-  /* Velocidad un poco más rápida para el tamaño más grande */
-  animation: scroll-slide 25s linear infinite; 
-}
-
-.gallery-container:hover .carousel-track {
-    animation-play-state: paused; 
-}
-
-
-/* --- DEFINICIÓN DE LA ANIMACIÓN (Desktop) --- */
-@keyframes scroll-slide {
-  0% {
-    transform: translateX(0);
+  /* --- SECCIÓN DE LA GALERÍA --- */
+  .gallery-section {
+    padding: 80px 20px;
+    background: #000; /* Fondo negro */
+    text-align: center;
   }
-  100% {
-    /* Nuevo desplazamiento: 4x 380px + 4x 20px = 1520px + 80px = 1600px */
-    transform: translateX(-1600px); 
-  }
-}
 
-/* --- MEDIA QUERY (Móviles) --- */
-@media (max-width: 768px) {
+  .gallery-section .section-title {
+    font-size: 3em; 
+    margin-bottom: 50px;
+    color: #aaa4a4; 
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  }
+
+  /* --- CONTENEDOR DE LA GALERÍA --- */
+  .gallery-container {
+    display: flex;
+    justify-content: center;
+    max-width: 1600px; 
+    margin: 0 auto; 
+    overflow: hidden; 
+  }
+
   .gallery-item {
-    width: 90vw; 
-    height: 60vw; /* Usamos 'vw' también para la altura para mejor responsividad */
-    border-radius: 15px; /* Bordes un poco menos pronunciados en móvil */
+    
+    width: 380px; 
+    height: 280px; 
+    flex-shrink: 0; 
+    overflow: hidden; 
+    border-radius: 25px; 
+    border: 3px solid rgba(255, 255, 255, 0.1);    /* Borde sutil */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    position: relative;
   }
-  
+
+  .gallery-item:hover {
+    transform: scale(1.05); 
+    /* Sombra más intensa y brillante  */
+    box-shadow: 0 15px 45px rgba(135, 206, 250, 0.6); 
+  }
+
+  /* --- IMAGEN DENTRO DEL ÍTEM --- */
+  .gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: opacity 0.4s;
+  }
+
+  /* ---  CARRUSEL --- */
+  .carousel-track {
+    display: flex;
+    gap: 20px; 
+    animation: scroll-slide 25s linear infinite; 
+  }
+
+  .gallery-container:hover .carousel-track {
+      animation-play-state: paused; 
+  }
+
+
+  /* --- DEFINICIÓN DE LA ANIMACIÓN (Desktop) --- */
   @keyframes scroll-slide {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        /* Desplazamiento en móvil: 4x 90vw + 4x 20px = 360vw + 80px */
-        transform: translateX(calc(-360vw - 80px)); 
-      }
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      /* Nuevo desplazamiento: 4x 380px + 4x 20px = 1520px + 80px = 1600px */
+      transform: translateX(-1600px); 
+    }
   }
-}
+
+  /* --- MEDIA QUERY (Móviles) --- */
+  @media (max-width: 768px) {
+    .gallery-item {
+      width: 90vw; 
+      height: 60vw; /*'vw' también para la altura para mejor responsividad */
+      border-radius: 15px; /* Bordes un poco menos pronunciados en móvil */
+    }
+    
+    @keyframes scroll-slide {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          /* Desplazamiento en móvil: 4x 90vw + 4x 20px = 360vw + 80px */
+          transform: translateX(calc(-360vw - 80px)); 
+        }
+    }
+  }
 </style>
